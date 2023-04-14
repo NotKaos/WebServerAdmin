@@ -4,6 +4,16 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+Run this command to install all required dependencies.
+
+### `npm run dev:install`
+
+Run this command to start the application.
+
+### `npm run dev:start`
+
+This command will start and restart the application whenever any changes to the code is made.
+
 In the project directory, you can run:
 
 ### `npm start`
