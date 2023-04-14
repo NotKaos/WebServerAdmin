@@ -4,16 +4,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-Run this command to automatically install all required dependencies.
-
-### `npm run dev:install`
-
-Run this command to start testing the application.
-
-### `npm run dev:start`
-
-This command will run the application using nodemon which will automatically restart the application upon saving any updates to the code.
-
 In the project directory, you can run:
 
 ### `npm start`
