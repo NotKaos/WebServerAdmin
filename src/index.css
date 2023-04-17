@@ -31,12 +31,12 @@
   position: relative;
   padding: 0 0 10px 0;
 }
-.navbar ul li a{
+.navbar ul li a{ /*Letter color*/
   text-decoration: none;
   color: #fff;
   text-transform: uppercase;
 }
-.navbar ul li::after{
+.navbar ul li::after{ /* transition*/
  
   content: '';
   height: 3px;
@@ -50,3 +50,4 @@
 .navbar ul li:hover::after{
   width: 100%;
 }
+
