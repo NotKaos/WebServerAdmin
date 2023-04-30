@@ -8,10 +8,12 @@
     "@testing-library/user-event": "^13.5.0",
     "express": "^4.18.2",
     "morgan": "^1.10.0",
+    "mysql2": "^3.2.4",
     "nodemon": "^2.0.22",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
+    "sequelize": "^6.31.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -20,7 +22,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev:start": "nodemon ./app.js",
-    "dev:install": "npm install react react-dom react-scripts web-vitals express nodemon morgan"
+    "dev:install": "npm install react react-dom react-scripts web-vitals express nodemon morgan sequelize mysql2"
   },
   "eslintConfig": {
     "extends": [

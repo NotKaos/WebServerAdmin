@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sadness</title>
+    <link rel="stylesheet" href="./static/stylesheets/style.css" />
+    <script src="./static/scripts/signup.js"></script>
+  </head>
+
+  <body>
+    <div class="background">
+      <div class="navbar">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/en/9/96/Meme_Man_on_transparent_background.webp"
+          class="homelogo"
+        />
+        <ul>
+          <li><a href="#">Account</a></li>
+          <li><a href="#">TBA List</a></li>
+          <li><a href="#">Eggs</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </div>
+
+      <h1 class="center">Haven't got an account yet?</h1>
+      <h2 class="center">Register below!</h2>
+
+      <div class="myContainer">
+        <form id="login" action="./login.html" method="POST">
+          <h3>Account login</h3>
+          <p>Required information is marked with an asterisk (*)</p>
+          <br />
+          <div class="signinfix">
+            <label for="email">Email address*:</label>
+            <input
+              type="email"
+              class="input"
+              name="email"
+              id="email"
+              placeholder="Enter your email"
+            /><br />
+
+            <label for="department">Department: </label>
+            <select id="department" class="input" name="department">
+              <option value="department1">Department 1</option>
+              <option value="department2">Department 2</option>
+              <option value="department3">Department 3</option>
+              <option value="department4">Department 4</option></select
+            ><br />
+
+            <label for="password">Password*:</label>
+            <input
+              type="password"
+              class="input"
+              name="password"
+              id="password"
+              oninput="passwordStrength()"
+              required
+              placeholder="Create a password"
+            /><br />
+            <div id="strengthDiv">
+              <label id="strength"></label>
+            </div>
+            <br />
+            <div id="strengthDivBar"></div>
+            <br />
+          </div>
+
+          <input type="submit" class="button" value="Login" />
+          <input type="reset" class="button" value="Reset Form" /><br /><br />
+
+          <a class="hyperlink" href="login.html">
+            Already have an account? Log in here!</a
+          ><br />
+        </form>
+        <br />
+      </div>
+    </div>
+  </body>
+</html>
