@@ -1,5 +1,5 @@
 const {
-  models: { User },
+  models: { User, Department },
 } = require("../models");
 
 module.exports = {
@@ -8,15 +8,22 @@ module.exports = {
     username = "kim";
     email = "kim@gmail.com";
     password = "kimmy";
-    department = "computer science";
+    department = "philosophy";
 
+    let userData;
     User.create({
       username,
       email,
       password,
-      department,
     })
       .then((user) => {
+        userData = user;
+        return Department.findOne({
+          where: { department: department.toUpperCase() },
+        });
+      })
+      .then((department) => {
+        userData.addDepartment(department);
         res.send("User sucessfully registered");
       })
       .catch((err) => {

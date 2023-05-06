@@ -4,6 +4,7 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.INTEGER,
       primaryKey: true,
       autoIncrement: true,
+      unique: true,
     },
     username: {
       type: Sequelize.STRING,
@@ -15,10 +16,6 @@ module.exports = (sequelize, Sequelize) => {
       unique: true,
     },
     password: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    },
-    department: {
       type: Sequelize.STRING,
       allowNull: false,
     },

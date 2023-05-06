@@ -7,7 +7,7 @@ const home = "../../public/index.html";
 
 router.get("/", (req, res) => {
   // res.sendFile(path.join(__dirname, home));
-  user.create(req, res);
+  user.newUser(req, res);
 });
 
 module.exports = router;

@@ -1,19 +1,22 @@
 module.exports = (sequelize, Sequelize) => {
-  const Department = sequelize.define("department", {
-    dep_id: {
-      type: Sequelize.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
+  const Department = sequelize.define(
+    "department",
+    {
+      department_id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        unique: true,
+      },
+      department: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
     },
-    user_id: {
-      type: Sequelize.INTEGER,
-      references: { model: "user-model", key: "user_id" },
-    },
-    department: {
-      type: Sequelize.STRING,
-      allowNull: false,
-    },
-  });
+    {
+      timestamps: false,
+    }
+  );
 
   return Department;
 };
