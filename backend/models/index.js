@@ -13,5 +13,6 @@ db.sequelize = sequelize;
 db.models = {};
 
 db.models.User = require("./user-model")(sequelize, Sequelize.DataTypes);
+// db.models.Department = require("./department-model")(sequelize, Sequelize.DataTypes);
 
 module.exports = db;

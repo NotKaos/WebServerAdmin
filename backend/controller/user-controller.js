@@ -3,7 +3,7 @@ const {
 } = require("../models");
 
 module.exports = {
-  create: (req, res) => {
+  newUser: (req, res) => {
     // const { username, email, password } = req.body;
     username = "kim";
     email = "kim@gmail.com";
@@ -17,11 +17,13 @@ module.exports = {
       department,
     })
       .then((user) => {
-        res.write("User sucessfully registered");
+        res.send("User sucessfully registered");
       })
       .catch((err) => {
         res.status(500).send(err.message);
         console.log(err);
       });
   },
+
+  setDepartment: (req, res) => {},
 };
