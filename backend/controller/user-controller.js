@@ -4,11 +4,11 @@ const {
 
 module.exports = {
   newUser: (req, res) => {
-    // const { username, email, password } = req.body;
-    username = "kim";
-    email = "kim@gmail.com";
-    password = "kimmy";
-    department = "philosophy";
+    const { username, email, password, department } = req.body;
+    // username = "kim";
+    // email = "kim@gmail.com";
+    // password = "kimmy";
+    // department = "philosophy";
 
     let userData;
     User.create({
@@ -31,6 +31,4 @@ module.exports = {
         console.log(err);
       });
   },
-
-  setDepartment: (req, res) => {},
 };
