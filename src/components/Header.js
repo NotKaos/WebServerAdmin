@@ -10,10 +10,10 @@ class Header extends React.Component{
 <div class="h1">School Server </div>
 <ul>
     <li class="dropdown">
-        <a href="#">Departments</a>
+        <a href="/">Departments</a>
         <ul class="dropdown-content">
-          <li><a href="#">Computer Science</a></li>
-          <li><a href="#">Biology</a></li>
+          <li><a href="/ComputerScience">Computer Science</a></li>
+          <li><a href="/Biology">Biology</a></li>
           <li><a href="#">TBA</a></li>
           <li><a href="#">TBA</a></li>
           </ul>
