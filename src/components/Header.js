@@ -14,8 +14,8 @@ class Header extends React.Component{
         <ul class="dropdown-content">
           <li><a href="/ComputerScience">Computer Science</a></li>
           <li><a href="/Biology">Biology</a></li>
-          <li><a href="#">TBA</a></li>
-          <li><a href="#">TBA</a></li>
+            <li><a href="/English">English</a></li>
+          <li><a href="/Philosophy">Philosophy</a></li>
           </ul>
         </li>
     <li><a href="#">Account</a></li>
