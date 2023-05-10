@@ -185,3 +185,16 @@ body{
 .center{
   text-align: center;
 }
+
+#strengthDiv{
+  text-align: center;
+  font-size: 20px;
+}
+
+#strengthDivBar{
+  background: red;
+  height: 10px;
+  width: 25%;
+  visibility: hidden;
+
+}
