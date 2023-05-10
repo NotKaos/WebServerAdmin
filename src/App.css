@@ -121,3 +121,65 @@ margin-bottom: 30px;
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.myContainer
+{
+  width: 500px;
+  padding: 2.5rem;
+  margin: 50px 50px 50px 30%;
+  font-family: Helvetica;
+  font-size: 12px;
+  box-shadow: 0 0 75px;
+/*rgba(0, 0, 0, 0.2);*/
+  border-radius: 4px;
+  background: lightgray;
+  color: black;
+}
+
+
+
+/*Styles the input boxes on the login and register page*/
+.input
+{
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px;
+  border-style: solid;
+  border-color: #dddddd;
+  outline: none;
+  background: #eeeeee;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+body{
+  color: white;
+}
+
+/*Styles the buttons on the login/register pages*/
+.button
+{
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  font-size: 0.75rem;
+  color: black;
+  border-style: solid;
+  border-color: #dddddd;
+  border-radius: 4px;
+  background: gray(50);
+}
+
+
+.hyperlink
+{
+  justify-content: center;
+  align-items: center;
+}
+
+/*Centers some texts on the pages*/
+.center{
+  text-align: center;
+}

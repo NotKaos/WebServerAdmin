@@ -18,7 +18,15 @@ class Header extends React.Component{
           <li><a href="/Philosophy">Philosophy</a></li>
           </ul>
         </li>
-    <li><a href="#">Account</a></li>
+    <li className="dropdown">
+        <a href="/">Account</a>
+        <ul className="dropdown-content">
+            <li><a href="/Login">Login</a></li>
+            <li><a href="/Register">Register</a></li>
+            <li><a href="#">Account</a></li>
+        </ul>
+    </li>
+    <li><a href="#">About</a></li>
 
 </ul>
 </div>
