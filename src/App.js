@@ -18,6 +18,7 @@ function App() {
     <Router> 
       <Header />
       <Routes>
+       
       <Route path="/" element={<Home />} />
       <Route path="/ComputerScience" element={<ComputerScience />} />
       <Route path="/Biology" element={<Biology />} />
@@ -26,9 +27,9 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Register" element={<Register />} />
       </Routes>
-    
+  
     </Router>
-   
+    
    </div>
   );
 }

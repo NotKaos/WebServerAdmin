@@ -26,7 +26,7 @@ class Header extends React.Component{
             <li><a href="#">Account</a></li>
         </ul>
     </li>
-    <li><a href="#">About</a></li>
+  
 
 </ul>
 </div>
