@@ -11,18 +11,22 @@ class Register extends React.Component{
 
                     <form id ='login' action="/Register" method="POST">
 
-                        <h3>Account login</h3>
+                        <h3>Account register</h3>
                         <p>Required information is marked with an asterisk (*)</p><br/>
                         <div class="signinfix">
                             <label for="email">Email address*:</label>
                             <input type="email" class="input" name ="email" id="email" placeholder="Enter your email"/><br/>
 
+                            <label for="username">Username*:</label>
+                            <input type="text" className="input" name="username" id="username"
+                                   placeholder="Enter a username"/><br/>
+
                                 <label for="department">Department: </label>
                                 <select id="department" class="input" name="department">
-                                    <option value="Computer Science">Department 1</option>
-                                    <option value="Biology">Department 2</option>
-                                    <option value="English">Department 3</option>
-                                    <option value="Philosophy">Department 4</option>
+                                    <option value="Computer Science">Computer Science</option>
+                                    <option value="Biology">Biology</option>
+                                    <option value="English">English</option>
+                                    <option value="Philosophy">Philosophy</option>
                                 </select><br/>
 
                                 <label for="password">Password*:</label>
@@ -34,10 +38,10 @@ class Register extends React.Component{
                                     </div><br/>
                         </div>
 
-                        <input type="submit" class="button" value="Login"/>
+                        <input type="submit" class="button" value="Register"/>
                             <input type="reset" class= "button" value="Reset Form"/><br/><br/>
 
-                                <a class="hyperlink" href="/Register"> Don't have an account? Create an account here!</a><br/>
+                                <a class="hyperlink" href="/Login"> Already have an account? Login here!</a><br/>
                     </form><br/>
 
                 </div>
