@@ -5,7 +5,9 @@ class ComputerScience extends React.Component{
         return(
             <main>
                  <div class="CSbackground"><p>Every CS major during a test</p>
-            <iframe className="crabrave" width="1350" height="720" src="https://www.youtube.com/embed/LDU_Txk06tM" frameborder="0" allowfullscreen></iframe>
+            <center>
+                <iframe className="crabrave" width="1350" height="720" src="https://www.youtube.com/embed/LDU_Txk06tM" frameborder="0" allowfullscreen></iframe>
+            </center>
              </div>
           
             </main>
