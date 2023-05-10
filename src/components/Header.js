@@ -19,7 +19,7 @@ class Header extends React.Component{
           </ul>
         </li>
     <li><a href="#">Account</a></li>
-    <li><a href="#">About</a></li>
+
 </ul>
 </div>
             </header>
