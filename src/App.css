@@ -102,6 +102,7 @@ margin-bottom: 30px;
   position:absolute;
   padding-top: 20px;
   min-width: 160px;
+  
   /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
   /* z-index: 1; */
 }
@@ -112,6 +113,7 @@ margin-bottom: 30px;
   padding: 12px 30px;
   text-decoration: none;
   display: block;
+  background-color: #2c2b2b;
 }
 
 /* Change color of dropdown links on hover */
