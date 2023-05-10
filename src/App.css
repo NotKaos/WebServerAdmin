@@ -50,7 +50,7 @@ margin-bottom: 30px;
   padding: 25px 10px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content:center;
   /* border-style:groove;
   border-color: #b067d1;
   border-radius: 5px; */
@@ -128,7 +128,7 @@ margin-bottom: 30px;
 {
   width: 500px;
   padding: 2.5rem;
-  margin: 50px 50px 50px 30%;
+  margin: 50px 50px 50px 35%;
   font-family: Helvetica;
   font-size: 12px;
   box-shadow: 0 0 75px;
