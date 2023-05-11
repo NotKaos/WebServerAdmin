@@ -1,10 +1,13 @@
 import React from "react";
 
-class Home extends React.Component{
+class Login extends React.Component{
+
+
     render(){
         return (
-          <div class="backgroundHome"> 
-          <h1 className="center">Login below</h1>
+            <main>
+
+                <h1 className="center">Login below</h1>
                 <h2 className="center">Haven't got an account? Register <a href="/Register"><em><u>here</u></em></a>
                     </h2>
                 <div className="myContainer">
@@ -31,9 +34,9 @@ class Home extends React.Component{
                         </form>
                     <br/>
                 </div>
-          </div>
+            </main>
         )
     }
 }
 
-export default Home;
+export default Login;
