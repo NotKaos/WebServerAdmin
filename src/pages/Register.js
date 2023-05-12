@@ -82,7 +82,7 @@ class Register extends React.Component{
 
                                 <label for="department">Department: </label>
                                 <select id="department" class="input" name="department">
-                                    <option disabled selected value>Select a department</option>
+                                    <option disabled hidden selected value></option>
                                     <option value="Computer Science">Computer Science</option>
                                     <option value="Biology">Biology</option>
                                     <option value="English">English</option>
