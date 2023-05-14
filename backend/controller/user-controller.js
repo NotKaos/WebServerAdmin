@@ -4,7 +4,7 @@ const {
 
 module.exports = {
   newUser: (req, res) => {
-    const { username, email, password, department } = req.body;
+    const { email, username, department, password } = req.body;
     // username = "kim";
     // email = "kim@gmail.com";
     // password = "kimmy";
