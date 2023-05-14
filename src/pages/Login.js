@@ -1,9 +1,13 @@
 import React from "react";
 
+
 class Login extends React.Component{
 
+        
 
     render(){
+        
+        
         return (
             <main>
 
@@ -15,16 +19,17 @@ class Login extends React.Component{
                         <h3>Account login</h3>
                             <p>Required information is marked with an asterisk (*)</p><br/>
                             <div className="signinfix">
-                                <label htmlFor="username">Username*:</label>
-                                <input type="text" className="input" name="username" id="username" required
-                                       placeholder="Enter your Username"/>
+                                <label htmlFor="email">Email*:</label>
+                                <input type="text" className="input" name="email" id="email" required
+                                       placeholder="Enter your email"/>
 
                                     <label htmlFor="password">Password*</label>
                                     <input type="password" className="input" name="password" id="password" required
                                            placeholder="Enter your Password"/>
                             </div>
 
-                            <input type="submit" className="button" value="Login"/>
+                            <button input type="submit" className="button" value="Login" >login</button>
+                            
                                 <input type="reset" className="button" value="Reset Form"/><br/>
 
                                     <a className="hyperlink" href="/Register"> Don't have an account? Create an
@@ -33,10 +38,14 @@ class Login extends React.Component{
                     <br/>
                         </form>
                     <br/>
+                    
                 </div>
+                
             </main>
+            
         )
     }
+    
 }
 
 export default Login;
