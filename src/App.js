@@ -18,12 +18,12 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/ComputerScience" element={<ComputerScience />} />
-          <Route path="/Biology" element={<Biology />} />
-          <Route path="/English" element={<English />} />
-          <Route path="/Philosophy" element={<Philosophy />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Register" element={<Register />} />
+          <Route path="/computerScience" element={<ComputerScience />} />
+          <Route path="/biology" element={<Biology />} />
+          <Route path="/english" element={<English />} />
+          <Route path="/philosophy" element={<Philosophy />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </Router>
     </div>

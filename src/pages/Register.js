@@ -1,4 +1,5 @@
 import React from "react";
+import { registration } from "../services/registration-service";
 
 class Register extends React.Component {
   constructor(props) {
@@ -6,32 +7,17 @@ class Register extends React.Component {
     this.state = {
       email: "",
       username: "",
-      department: "Computer Science",
+      department: "",
       password: "",
     };
     this.submit = this.submit.bind(this);
   }
+
   submit(data) {
-    const { email, username, department, password } = this.state;
-    console.log(email, username, department, password);
-    fetch("/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "text/html",
-      },
-      body: JSON.stringify({
-        email,
-        username,
-        department,
-        password,
-      }),
-    })
-      .then((res) => {
-        console.log(res);
-        res.json();
-      })
-      .then((data) => console.log(data, "userRegister"));
+    data.preventDefault();
+    registration(this.state);
   }
+
   passwordStrength() {
     let password = document.getElementById("password").value; //retreives the password
     let strength_points = 0;
@@ -91,6 +77,7 @@ class Register extends React.Component {
       document.getElementById("strengthDivBar").style.width = "100%";
     }
   }
+
   render() {
     return (
       <main>
@@ -98,12 +85,7 @@ class Register extends React.Component {
         <h2 class="center">Register below!</h2>
 
         <div class="myContainer">
-          <form
-            id="login"
-            action="/Register"
-            method="POST"
-            onSubmit={this.submit}
-          >
+          <form id="login" action="/login" method="POST" onSubmit={this.submit}>
             <h3>Account register</h3>
             <p>Required information is marked with an asterisk (*)</p>
             <br />
@@ -141,6 +123,7 @@ class Register extends React.Component {
                 class="input"
                 name="department"
               >
+                <option disabled hidden selected value></option>
                 <option value="Computer Science">Computer Science</option>
                 <option value="Biology">Biology</option>
                 <option value="English">English</option>
@@ -150,17 +133,25 @@ class Register extends React.Component {
 
               <label for="password">Password*:</label>
               <input
-                type="password"
-                class="input"
-                name="password"
-                id="password"
                 onChange={(data) => {
                   this.passwordStrength();
                   this.setState({ password: data.target.value });
                 }}
+                type="password"
+                class="input"
+                name="password"
+                id="password"
                 required
                 placeholder="Create a password"
               />
+              <br />
+              <div id="strengthDiv">
+                <label id="strength"></label>
+              </div>
+              <br />
+              <div id="strengthDivBar" />
+              <br />
+
               <br />
               <div id="strengthDiv">
                 <label id="strength"></label>
