@@ -3,22 +3,21 @@ import { login } from "../services/login-service";
 import {useNavigate} from "react-router-dom";
 
 
-
-const state = {
-  email: "",
-  password: "",
-};
-
-function submit(data) {
-  data.preventDefault();
-  login(this.state);
-}
-
 function HomeButton() {
   const navigate = useNavigate();
 
   function handleClick() {
-    navigate("/Home");
+    navigate("/");
+  }
+
+  const state = {
+    email: "",
+    password: "",
+  };
+
+  function submit(data) {
+    data.preventDefault();
+    login(this.state);
   }
 
   return (

@@ -8,6 +8,8 @@ function login(state) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
+  }).then((res) => {
+    // Do Something
   });
 }
 
