@@ -1,3 +1,5 @@
+/* Keep this just in case if needed */
+
 // const {
 //   models: { User, Department, User_Department },
 // } = require("../models");
