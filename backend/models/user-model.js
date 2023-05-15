@@ -21,12 +21,5 @@ module.exports = (sequelize, Sequelize) => {
     },
   });
 
-  User.belongsTo(sequelize.models.Department, {
-    foregnKey: {
-      name: 'department_id',
-      allowNull: false,
-    }
-  });
-
   return User;
 };
