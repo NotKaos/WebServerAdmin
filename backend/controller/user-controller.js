@@ -4,11 +4,7 @@ const {
 
 module.exports = {
   newUser: (req, res) => {
-    //const { username, email, password, department } = req.body;
-    username = "kim";
-    email = "kim@gmail.com";
-    password = "kimmy";
-    department = "philosophy";
+    const { email, username, department, password } = req.body;
 
     let userData;
     User.create({
@@ -24,7 +20,7 @@ module.exports = {
       })
       .then((department) => {
         userData.addDepartment(department);
-        res.send("User sucessfully registered");
+        res.sendStatus(201);
       })
       .catch((err) => {
         res.status(500).send(err.message);
