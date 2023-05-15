@@ -1,13 +1,17 @@
 import React from "react";
+import {useNavigate} from "react-router-dom";
 
 
-class Login extends React.Component{
 
-        
 
-    render(){
-        
-        
+    function HomeButton() {
+        const navigate = useNavigate();
+
+        function handleClick() {
+            navigate("/Home");
+        }
+
+
         return (
             <main>
 
@@ -15,7 +19,7 @@ class Login extends React.Component{
                 <h2 className="center">Haven't got an account? Register <a href="/Register"><em><u>here</u></em></a>
                     </h2>
                 <div className="myContainer">
-                    <form id='login' action="/Login" method="POST">
+                    <form id='login' /*action="" method="POST"*/>
                         <h3>Account login</h3>
                             <p>Required information is marked with an asterisk (*)</p><br/>
                             <div className="signinfix">
@@ -28,7 +32,7 @@ class Login extends React.Component{
                                            placeholder="Enter your Password"/>
                             </div>
 
-                            <button input type="submit" className="button" value="Login" >login</button>
+                            <button input  className="button" value="Login" onClick={handleClick}>Login</button>
                             
                                 <input type="reset" className="button" value="Reset Form"/><br/>
 
@@ -46,6 +50,7 @@ class Login extends React.Component{
         )
     }
     
-}
 
-export default Login;
+
+
+export default HomeButton;
