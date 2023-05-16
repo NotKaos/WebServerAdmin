@@ -11,6 +11,11 @@ function registration(state) {
     if (data.status == 201) {
       // User registered
       // Do something
+      window.location.replace("/src/pages/Home.js");
+    } else if (data.status == 500) {
+      alert("Email already exists");
+      document.getElementById("userExists").innerHTML = "Email already exists";
+      document.getElementById("userExists").style.color = "red";
     } else {
       // User registration failed.
     }

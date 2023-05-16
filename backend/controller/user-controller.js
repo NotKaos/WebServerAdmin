@@ -20,6 +20,7 @@ module.exports = {
       })
       .then((department) => {
         userData.addDepartment(department);
+        console.log(req.session);
         res.sendStatus(201);
       })
       .catch((err) => {
@@ -27,4 +28,6 @@ module.exports = {
         console.log(err);
       });
   },
+
+  login: (req, res) => {},
 };

@@ -9,7 +9,8 @@ function login(state) {
     },
     body: JSON.stringify({ email, password }),
   }).then((res) => {
-    // Do Something
+    if (res.status == 200) {
+    }
   });
 }
 

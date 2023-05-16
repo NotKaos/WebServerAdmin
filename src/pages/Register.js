@@ -88,6 +88,9 @@ class Register extends React.Component {
           <form id="login" action="/login" method="POST" onSubmit={this.submit}>
             <h3>Account register</h3>
             <p>Required information is marked with an asterisk (*)</p>
+            <div id="errorDIiv">
+              <label id="userExists"></label>
+            </div>
             <br />
             <div class="signinfix">
               <label for="email">Email address*:</label>
