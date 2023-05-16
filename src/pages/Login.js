@@ -1,23 +1,20 @@
 import React from "react";
 import { login } from "../services/login-service";
-import {useNavigate} from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 function HomeButton() {
   const navigate = useNavigate();
+  var email = "";
+  var password = "";
 
   function handleClick() {
     navigate("/");
   }
 
-  const state = {
-    email: "",
-    password: "",
-  };
-
   function submit(data) {
     data.preventDefault();
-    login(this.state);
+    console.log(email, password);
+    login({ email, password });
   }
 
   return (
@@ -45,7 +42,7 @@ function HomeButton() {
               id="email"
               required
               placeholder="Enter your email"
-              onChange={(data) => (state.email = data.target.value)}
+              onChange={(data) => (this.email = data.target.value)}
             />
 
             <label htmlFor="password">Password*</label>
@@ -56,11 +53,15 @@ function HomeButton() {
               id="password"
               required
               placeholder="Enter your Password"
-              onChange={(data) => (state.password = data.target.value)}
+              onChange={(data) => (this.password = data.target.value)}
             />
           </div>
 
-          <button input className="button" value="Login" onClick={handleClick}>
+          <button
+            input
+            className="button"
+            value="Login" /*onClick={handleClick}*/
+          >
             Login
           </button>
 
@@ -79,8 +80,5 @@ function HomeButton() {
     </main>
   );
 }
-    
-
-
 
 export default HomeButton;

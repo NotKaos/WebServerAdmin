@@ -31,6 +31,6 @@ module.exports = {
       });
   },
   login: (req, res) => {
-    auth.login(req, res);
+    auth(req, res);
   },
 };
