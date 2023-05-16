@@ -1,10 +1,15 @@
 const express = require("express");
 const app = express();
+const session = require("express-session");
+const cookieParser = require("cookie-parser");
 const morgan = require("morgan");
+const cors = require("cors");
+
+require("dotenv").config();
+
 const defaultDepartments = require("./backend/middleware/default-departments");
 
-const PORT = process.env.PORT || 3000;
-
+const PORT = process.env.PORT || 3001;
 const db = require("./backend/models");
 db.sequelize
   .sync()
@@ -16,9 +21,28 @@ db.sequelize
   });
 
 app.use(morgan("dev"));
-root = require("./backend/routes/root");
+app.use(express.json());
+app.use(cors());
+app.use(cookieParser());
+
+app.use(
+  session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 60 * 60,
+    },
+  })
+);
+
+const root = require("./backend/routes/root");
+const register = require("./backend/routes/register");
+const login = require("./backend/routes/login");
 
 app.use("/", root);
+app.use("/register", register);
+app.use("/login", login);
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);

@@ -21,6 +21,7 @@ db.models.Users_Department = require("./users-department-model")(
   sequelize,
   Sequelize.DataTypes
 );
+db.models.Session = require("./session-model")(sequelize, Sequelize.DataTypes);
 
 const User = db.models.User;
 const Department = db.models.Department;

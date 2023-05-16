@@ -1,6 +1,23 @@
 import React from "react";
+import { registration } from "../services/registration-service";
 
 class Register extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      username: "",
+      department: "",
+      password: "",
+    };
+    this.submit = this.submit.bind(this);
+  }
+
+  submit(data) {
+    data.preventDefault();
+    registration(this.state);
+  }
+
   passwordStrength() {
     let password = document.getElementById("password").value; //retreives the password
     let strength_points = 0;
@@ -60,6 +77,7 @@ class Register extends React.Component {
       document.getElementById("strengthDivBar").style.width = "100%";
     }
   }
+
   render() {
     return (
       <main>
@@ -67,9 +85,12 @@ class Register extends React.Component {
         <h2 class="center">Register below!</h2>
 
         <div class="myContainer">
-          <form id="login" action="/Register" method="POST">
+          <form id="login" action="/login" method="POST" onSubmit={this.submit}>
             <h3>Account register</h3>
             <p>Required information is marked with an asterisk (*)</p>
+            <div id="errorDIiv">
+              <label id="userExists"></label>
+            </div>
             <br />
             <div class="signinfix">
               <label for="email">Email address*:</label>
@@ -79,6 +100,7 @@ class Register extends React.Component {
                 name="email"
                 id="email"
                 placeholder="Enter your email"
+                onChange={(data) => this.setState({ email: data.target.value })}
               />
               <br />
 
@@ -89,11 +111,22 @@ class Register extends React.Component {
                 name="username"
                 id="username"
                 placeholder="Enter a username"
+                onChange={(data) =>
+                  this.setState({ username: data.target.value })
+                }
               />
               <br />
 
               <label for="department">Department: </label>
-              <select id="department" class="input" name="department">
+              <select
+                onChange={(data) => {
+                  this.setState({ department: data.target.value });
+                }}
+                id="department"
+                class="input"
+                name="department"
+              >
+                <option disabled hidden selected value></option>
                 <option value="Computer Science">Computer Science</option>
                 <option value="Biology">Biology</option>
                 <option value="English">English</option>
@@ -103,14 +136,25 @@ class Register extends React.Component {
 
               <label for="password">Password*:</label>
               <input
+                onChange={(data) => {
+                  this.passwordStrength();
+                  this.setState({ password: data.target.value });
+                }}
                 type="password"
                 class="input"
                 name="password"
                 id="password"
-                onChange={this.passwordStrength}
                 required
                 placeholder="Create a password"
               />
+              <br />
+              <div id="strengthDiv">
+                <label id="strength"></label>
+              </div>
+              <br />
+              <div id="strengthDivBar" />
+              <br />
+
               <br />
               <div id="strengthDiv">
                 <label id="strength"></label>
