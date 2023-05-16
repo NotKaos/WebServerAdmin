@@ -4,7 +4,6 @@ const path = require("path");
 const { user } = require("../controller");
 
 router.post("/", (req, res) => {
-  console.log(req.body);
   user.login(req, res);
 });
 

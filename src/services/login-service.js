@@ -7,7 +7,13 @@ function login(state) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, password }),
-  }).then((res) => {});
+  }).then((res) => {
+    if (res.status == 200) {
+      // Do Something
+    } else if (res.status == 401) {
+      // Do Something Else
+    }
+  });
 }
 
 export { login };
