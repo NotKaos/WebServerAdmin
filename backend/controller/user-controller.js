@@ -21,7 +21,6 @@ module.exports = {
       })
       .then((department) => {
         userData.addDepartment(department);
-
         console.log(req.session);
         res.sendStatus(201);
       })

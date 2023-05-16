@@ -8,9 +8,9 @@ function login(state) {
     },
     body: JSON.stringify({ email, password }),
   }).then((res) => {
-    if (res.status == 200) {
+    if (res.status === 200) {
       // Do Something
-    } else if (res.status == 401) {
+    } else if (res.status === 401) {
       // Do Something Else
     }
   });

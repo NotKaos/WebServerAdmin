@@ -10,6 +10,7 @@ import "./App.css";
 import Philosophy from "./pages/Philosophy";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+// import Logout from "./services/logout";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/philosophy" element={<Philosophy />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          {/* <Route path="/logout" element={<Logout />} /> */}
         </Routes>
       </Router>
     </div>

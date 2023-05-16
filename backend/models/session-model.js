@@ -2,7 +2,7 @@ module.exports = (sequelize, Sequelize) => {
   const Session = sequelize.define(
     "session",
     {
-      session_id: {
+      sid: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
