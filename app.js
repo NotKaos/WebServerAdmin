@@ -44,6 +44,7 @@ app.use(
 const root = require("./backend/routes/root");
 const register = require("./backend/routes/register");
 const login = require("./backend/routes/login");
+const sessionCheck = require("./backend/routes/sessionCheck");
 const computerScience = require("./backend/routes/computerScience");
 const biology = require("./backend/routes/biology");
 const english = require("./backend/routes/english");
@@ -53,6 +54,7 @@ const logout = require("./backend/routes/logout");
 app.use("/", root);
 app.use("/register", register);
 app.use("/login", login);
+app.use("/sessionCheck", isAuth, sessionCheck);
 app.use("/computerScience", computerScience);
 app.use("/biology", biology);
 app.use("/english", english);

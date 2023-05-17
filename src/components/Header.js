@@ -1,20 +1,40 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function Header() {
-  let isAuthenticated = false;
+  const [auth, setAuth] = useState(false);
+  const [username, setUsername] = useState("");
+
+  useEffect(() => {
+    fetch("/sessionCheck").then((res) => {
+      if (res.status === 200) {
+        setAuth(true);
+        res.json().then((data) => {
+          setUsername(data.username);
+        });
+      }
+    });
+  }, []);
+
+  const handleLogout = () => {
+    fetch("/logout")
+      .then((res) => {
+        window.location.replace("/");
+      })
+      .catch((err) => {});
+  };
 
   return (
     <header>
-      <div class="navbar">
+      <div className="navbar">
         <img
           src="https://static-00.iconduck.com/assets.00/reddit-logo-icon-512x512-jv3e2p8i.png"
-          class="homelogo"
+          className="homelogo"
         />
-        <div class="h1">School Server </div>
+        <div className="h1">School Server </div>
         <ul>
-          <li class="dropdown">
+          <li className="dropdown">
             <a href="/">Departments</a>
-            <ul class="dropdown-content">
+            <ul className="dropdown-content">
               <li>
                 <a href="/computerScience">Computer Science</a>
               </li>
@@ -30,19 +50,34 @@ function Header() {
             </ul>
           </li>
           <li className="dropdown">
-            <a href="/">Account</a>
+            {auth ? (
+              <>
+                <li>Welcome! {username}</li>
+              </>
+            ) : (
+              <>
+                <a href="/">Account</a>
+              </>
+            )}
             <ul className="dropdown-content">
-              <li>
-                <a href="/register">Register</a>
-              </li>
-
-              <li>
-                <a href="/login">Login</a>
-              </li>
-
-              <li>
-                <a href="/logout">Logout</a>
-              </li>
+              {auth ? (
+                <>
+                  <li>
+                    <a href="/logout" onClick={handleLogout}>
+                      Logout
+                    </a>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <a href="/login">Login</a>
+                  </li>
+                  <li>
+                    <a href="/register">Register</a>
+                  </li>
+                </>
+              )}
             </ul>
           </li>
         </ul>

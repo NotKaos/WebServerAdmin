@@ -10,6 +10,7 @@ function login(state) {
     if (res.status === 200) {
       window.location.replace("/");
     } else if (res.status === 401) {
+      alert("The email or password is incorrect");
       window.location.replace("/login");
     } else {
       alert('You stupid.');

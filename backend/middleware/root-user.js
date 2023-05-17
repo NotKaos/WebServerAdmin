@@ -1,3 +1,4 @@
+const bcrypt = require("bcrypt");
 const {
   models: { User, Department, Users_Department },
 } = require("../models");
@@ -6,11 +7,15 @@ module.exports = () => {
   User.findOne({ where: { username: "root" } })
     .then((rootUser) => {
       if (!rootUser) {
-        return User.create({
-          username: "root",
-          email: "root@gmail.com",
-          password: "root",
-        });
+        return bcrypt
+          .hash("root", 10) // Hash the password
+          .then((hashedPassword) => {
+            return User.create({
+              username: "root",
+              email: "root@gmail.com",
+              password: hashedPassword,
+            });
+          });
       } else {
         return Promise.resolve(rootUser);
       }

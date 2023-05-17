@@ -1,3 +1,4 @@
+const bcrypt = require("bcrypt");
 const {
   models: { User, Department },
 } = require("../models");
@@ -8,11 +9,17 @@ module.exports = {
   newUser: (req, res) => {
     const { username, email, password, department } = req.body;
     let userData;
-    User.create({
-      username,
-      email,
-      password,
-    })
+
+    bcrypt
+      .genSalt(10)
+      .then((salt) => bcrypt.hash(password, salt))
+      .then((hashedPassword) => {
+        return User.create({
+          username,
+          email,
+          password: hashedPassword,
+        });
+      })
       .then((user) => {
         userData = user;
         return Department.findOne({
