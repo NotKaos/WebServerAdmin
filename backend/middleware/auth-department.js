@@ -1,16 +1,10 @@
-const {
-    models: { User, Department, User_Department },
-  } = require("../models");
-  
-module.exports = {
-    check: (req, res) =>{
-        User_Department.findOne({where: { user_id}}).then((user_department) => {
-            if(!user_department){
-              return res.status(403).send("User department not found");
-            }
-            
-        });
+const departmentAuth = (req, res, department) => {
+  const authorized = req.session.department.some(
+    (sess_dep) => sess_dep.department === department
+  );
 
-    },
+  if (authorized) res.sendStatus(200);
+  else res.sendStatus(401);
+};
 
-}
+module.exports = departmentAuth;

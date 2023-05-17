@@ -10,6 +10,7 @@ const isAuth = require("./backend/middleware/is-auth");
 require("dotenv").config();
 
 const defaultDepartments = require("./backend/middleware/default-departments");
+const rootUser = require("./backend/middleware/root-user");
 
 const PORT = process.env.PORT || 3001;
 const db = require("./backend/models");
@@ -17,6 +18,7 @@ db.sequelize
   .sync()
   .then(() => {
     defaultDepartments();
+    rootUser();
   })
   .catch((err) => {
     console.log(err);
@@ -43,12 +45,18 @@ const root = require("./backend/routes/root");
 const register = require("./backend/routes/register");
 const login = require("./backend/routes/login");
 const computerScience = require("./backend/routes/computerScience");
+const biology = require("./backend/routes/biology");
+const english = require("./backend/routes/english");
+const philosophy = require("./backend/routes/philosophy");
 const logout = require("./backend/routes/logout");
 
 app.use("/", root);
 app.use("/register", register);
 app.use("/login", login);
 app.use("/computerScience", computerScience);
+app.use("/biology", biology);
+app.use("/english", english);
+app.use("/philosophy", philosophy);
 app.use("/logout", logout);
 
 app.listen(PORT, () => {
