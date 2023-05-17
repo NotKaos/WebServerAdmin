@@ -1,12 +1,9 @@
 import React from "react";
+import { isAuth } from "../services/auth-service";
 
 function Header() {
   function verify(page) {
-    fetch(page).then((res) => {
-      if (res.status === 401) {
-        window.location.href = "/";
-      }
-    });
+    isAuth(page);
   }
 
   return (
