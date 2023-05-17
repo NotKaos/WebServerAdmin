@@ -11,6 +11,9 @@ function login(state) {
       window.location.replace("/");
     } else if (res.status === 401) {
       window.location.replace("/login");
+    } else {
+      alert('You stupid.');
+      window.location.replace("/login");
     }
   });
 }

@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const path = require("path");
-const { user, auth } = require("../controller");
+const { user } = require("../controller");
 
 
 const home = "../../public/index.html";

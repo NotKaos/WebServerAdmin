@@ -33,6 +33,8 @@ const loginCheck = (req, res) => {
     } else {
       res.sendStatus(401);
     }
+  }).catch((err) => {
+    res.sendStatus(500)
   });
 };
 

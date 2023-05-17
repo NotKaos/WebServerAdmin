@@ -1,10 +1,7 @@
 import React from "react";
-import { isAuth } from "../services/auth-service";
 
 function Header() {
-  function verify(page) {
-    isAuth(page);
-  }
+  let isAuthenticated = false;
 
   return (
     <header>
@@ -19,27 +16,16 @@ function Header() {
             <a href="/">Departments</a>
             <ul class="dropdown-content">
               <li>
-                <a
-                  href="/computerScience"
-                  onClick={() => verify("/computerScience")}
-                >
-                  Computer Science
-                </a>
+                <a href="/computerScience">Computer Science</a>
               </li>
               <li>
-                <a href="/biology" onClick={() => verify("/biology")}>
-                  Biology
-                </a>
+                <a href="/biology">Biology</a>
               </li>
               <li>
-                <a href="/english" onClick={() => verify("/english")}>
-                  English
-                </a>
+                <a href="/english">English</a>
               </li>
               <li>
-                <a href="/philosophy" onClick={() => verify("/philosophy")}>
-                  Philosophy
-                </a>
+                <a href="/philosophy">Philosophy</a>
               </li>
             </ul>
           </li>
@@ -47,13 +33,15 @@ function Header() {
             <a href="/">Account</a>
             <ul className="dropdown-content">
               <li>
-                <a href="/login">Login</a>
-              </li>
-              <li>
                 <a href="/register">Register</a>
               </li>
+
               <li>
-                <a href="#">Account</a>
+                <a href="/login">Login</a>
+              </li>
+
+              <li>
+                <a href="/logout">Logout</a>
               </li>
             </ul>
           </li>
