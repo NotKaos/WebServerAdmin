@@ -1,6 +1,5 @@
 function login(state) {
   const { email, password } = state;
-
   fetch("/login", {
     method: "POST",
     headers: {

@@ -42,17 +42,15 @@ app.use(
 const root = require("./backend/routes/root");
 const register = require("./backend/routes/register");
 const login = require("./backend/routes/login");
+const computerScience = require("./backend/routes/computerScience");
 const logout = require("./backend/routes/logout");
 
 app.use("/", root);
 app.use("/register", register);
 app.use("/login", login);
+app.use("/computerScience", computerScience);
 app.use("/logout", logout);
 
 app.listen(PORT, () => {
   console.log(`listening on port ${PORT}`);
-});
-
-app.use((req, res, next) => {
-  next(createError(404));
 });
